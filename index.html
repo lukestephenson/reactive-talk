@@ -6,7 +6,7 @@
 
     <title>Reactive Programming</title>
 
-    <meta name="description" content="A short introduction to reactive programming for Java devs">
+    <meta name="description" content="A short introduction to reactive programming">
     <meta name="author" content="Luke Stephenson">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -42,10 +42,29 @@
       <div class="slides">
         <section>
           <h1>Reactive Programming</h1>
-          <h3>A short introduction for Java devs</h3>
+          <h3>A short introduction</h3>
           <p>
             <small>Presented by <a href="http://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile">Luke Stephenson</a></small>
           </p>
+        </section>
+
+        <section>
+          <h2>Who am I?</h2>
+          <h3>Luke Stephenson</h3>
+          <ul>
+          	<li>Java developer by day</li>
+          	<li>Scala developer by night</li>
+          	<li>Not an expert on any of this!</li>
+          </ul>
+        </section>
+
+				<section>
+          <h2>Agenda</h2>
+          <ul>
+          	<li>Brief reactive definition</li>
+          	<li>Legacy Java examples</li>
+          	<li>Reactive with Play</li>
+          </ul>
         </section>
 
         <section>
@@ -142,14 +161,6 @@ def map[S](f : scala.Function1[T, S])
         </section>
 
         <section>
-          <h2><a href="https://www.playframework.com">Play Framework</a></h2>
-          <p>
-            Lightweight reactive web application framework.  How many Threads by default?
-          </p>
-          <p class="fragment">One per processor</p>
-        </section>
-
-        <section>
           <h2>Scenario</h2>
           <p>
             A website with an index page and a REST API which processes large uploads.
@@ -186,8 +197,17 @@ def map[S](f : scala.Function1[T, S])
           <ul>
             <li><a href="http://vertx.io/">Vert.x (JVM)</a></li>
             <li><a href="https://nodejs.org/">Node.js</a></li>
-            <li><a href="https://www.playframework.com/">Play Framework</a></li>
+            <li><a href="https://www.playframework.com/">Play Framework (JVM)</a></li>
+            <li><a href="http://spray.io/">Spray (JVM)</a></li>
           </ul>
+        </section>
+
+        <section>
+          <h2><a href="https://www.playframework.com">Play Framework</a></h2>
+          <p>
+            Lightweight reactive web application framework.  How many Threads by default?
+          </p>
+          <p class="fragment">One per core</p>
         </section>
 
         <section>
@@ -201,7 +221,6 @@ def map[S](f : scala.Function1[T, S])
           Similarly, callbacks can't just accept data to handle without any sort of throttling.
           The end result might be the requested action cannot be completed, but the -->
           <p>A component feeding back to it's caller that it can't keep up so that the caller can respond appropriately.</p>
-          <p>Providing a callback, allows reacting to an event</p>
         </section>
 
         <section>
